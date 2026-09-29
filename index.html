@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Computer Programming Club | Strake Jesuit</title>
+<meta name="description" content="The Strake Jesuit Computer Programming Club. Members join the GitHub organization by filing an issue in the signup repository.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Computer Programming Club | Strake Jesuit">
+<meta property="og:description" content="Members join the GitHub organization by filing an issue in the signup repository.">
+<link rel="icon" href="https://bbk12e1-cdn.myschoolcdn.com/ftpimages/1550/site/1426/favicon/sj%20favicon%2064x64.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#004730;
+    --green-deep:#003524;
+    --cream:#F7F2E8;
+    --gray:#5A5754;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:"Montserrat", system-ui, sans-serif;
+    font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Libre Caslon Text", Georgia, serif; font-weight:400; letter-spacing:-.01em}
+  h1{font-size:clamp(40px,6.4vw,84px); line-height:1.02; margin:0 0 26px; color:var(--head)}
+  h2{font-size:clamp(24px,2.6vw,32px); line-height:1.15; margin:0 0 18px; color:var(--head)}
+  h3{margin:0 0 4px; font-size:21px; line-height:1.2; color:var(--head)}
+  a{color:inherit}
+
+  /* One band is one surface. These tokens flip with the surface. */
+  .band{
+    --ink:#F7F2E8; --sub:rgba(247,242,232,.72); --line:rgba(247,242,232,.28);
+    --accent:#D9A93C; --head:#F7F2E8;
+    --btn-bg:#F7F2E8; --btn-ink:#004730;
+    background:var(--green); color:var(--ink);
+  }
+  .band--cream{
+    --ink:#5A5754; --sub:rgba(90,87,84,.82); --line:rgba(90,87,84,.22);
+    --accent:#8A6608; --head:#004730; --btn-bg:#004730; --btn-ink:#F7F2E8;
+    background:var(--cream); color:var(--ink);
+  }
+  .band--deep{--accent:#C6940E; background:var(--green-deep)}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 clamp(20px,4vw,44px)}
+
+  .label{font-size:11.5px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin:0 0 12px}
+  .lead{max-width:52ch; color:var(--sub); font-size:clamp(17px,1.7vw,19px); margin:0 0 34px}
+
+  .masthead{display:flex; align-items:center; gap:18px; flex-wrap:wrap; padding:22px 0 20px; border-bottom:1px solid var(--line)}
+  .masthead img{width:46px; height:46px; display:block}
+  .masthead .names{display:flex; flex-direction:column; line-height:1.2; margin-right:auto}
+  .masthead .school{font-size:11.5px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--sub)}
+  .masthead .club{font-family:"Libre Caslon Text", Georgia, serif; font-size:19px}
+  .masthead nav{display:flex; gap:26px; font-size:13.5px; font-weight:500}
+  .masthead nav a{text-decoration:none; color:var(--sub)}
+  .masthead nav a:hover{color:var(--ink)}
+
+  .hero{padding:clamp(60px,11vw,140px) 0 clamp(56px,8vw,100px)}
+  .hero p:not(.label){max-width:44ch; font-size:clamp(17px,1.7vw,19px); color:var(--sub); margin:0 0 34px}
+  .btn{
+    display:inline-flex; align-items:baseline; gap:14px; text-decoration:none;
+    background:var(--btn-bg); color:var(--btn-ink); font-weight:600; font-size:16px; padding:17px 30px;
+    transition:filter .18s cubic-bezier(.16,1,.3,1);
+  }
+  .btn:hover{filter:brightness(1.08)}
+  .btn:focus-visible{outline:3px solid var(--accent); outline-offset:3px}
+  .btn .arrow{transition:transform .18s cubic-bezier(.16,1,.3,1)}
+  .btn:hover .arrow{transform:translateX(4px)}
+  .btn--quiet{background:transparent; color:var(--ink); border:1px solid var(--line); padding:16px 26px}
+  .btn--quiet:hover{background:rgba(247,242,232,.08)}
+  .actions{display:flex; gap:16px; flex-wrap:wrap; align-items:center}
+
+  section{padding:0 0 clamp(30px,4vw,48px); border-top:1px solid var(--line)}
+  section:first-child{border-top:0; padding-top:clamp(48px,8vw,88px)}
+  .band .wrap > section:last-child{padding-bottom:clamp(56px,9vw,104px)}
+  .steps{list-style:none; margin:0; padding:0; max-width:74ch}
+  .steps li{display:grid; grid-template-columns:6ch 1fr; gap:clamp(14px,3vw,32px); padding:26px 0; border-bottom:1px solid var(--line); align-items:start}
+  .steps li:last-child{border-bottom:0}
+  .steps .n{font-family:"Libre Caslon Text", Georgia, serif; font-size:clamp(22px,2.4vw,30px); color:var(--accent); line-height:1.25}
+  .steps p{margin:0; color:var(--sub); font-size:15.5px; max-width:52ch; overflow-wrap:anywhere}
+  .steps a{text-decoration:underline; text-underline-offset:3px}
+  .steps a:hover{text-decoration-thickness:2px}
+  .links a{
+    display:inline-block; text-decoration:none; font-size:clamp(17px,1.8vw,20px); color:var(--ink);
+    border-bottom:1px solid var(--line); padding-bottom:4px; margin:0 34px 0 0;
+  }
+  .links a:hover{border-color:var(--ink)}
+
+  footer{border-top:1px solid rgba(199,148,14,.5)}
+  footer .wrap{padding-top:34px; padding-bottom:40px; display:flex; flex-wrap:wrap; gap:14px 34px; align-items:center; font-size:14px}
+  footer .mark{display:flex; align-items:center; gap:12px; margin-right:auto}
+  footer img{width:32px; height:32px}
+  footer a{color:#F7F2E8; text-decoration:none; border-bottom:1px solid rgba(247,242,232,.3); overflow-wrap:anywhere}
+  footer a:hover{border-color:#F7F2E8}
+
+  @media (max-width:640px){
+    .masthead nav{width:100%; gap:20px}
+    .steps li{grid-template-columns:1fr; gap:6px}
+  }
+</style>
+</head>
+<body>
+
+<div class="band">
+  <div class="wrap">
+    <header class="masthead">
+      <img src="https://bbk12e1-cdn.myschoolcdn.com/1550/site/1426/homescreen/sj%20logo%20150x150.png?w=192" alt="Strake Jesuit">
+      <div class="names">
+        <span class="school">Strake Jesuit</span>
+        <span class="club">Computer Programming Club</span>
+      </div>
+      <nav>
+        <a href="#join">Joining</a>
+        <a href="#links">Links</a>
+        <a href="https://github.com/SJComputerProgrammingClub">GitHub</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <p class="label">Strake Jesuit</p>
+      <h1>Computer Programming Club</h1>
+      <p>A club at Strake Jesuit. Members join the GitHub organization by filing an issue in the signup repository.</p>
+      <div class="actions">
+        <a class="btn" href="https://github.com/SJComputerProgrammingClub/signup/issues/new">Join the organization <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn--quiet" href="https://github.com/SJComputerProgrammingClub">GitHub organization</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="band band--cream">
+  <div class="wrap">
+    <section id="join">
+      <p class="label">Joining</p>
+      <h2>Two steps.</h2>
+      <p class="lead">Membership starts at school. Once you are a member of the club, getting into the GitHub organization is one issue.</p>
+      <ol class="steps">
+        <li>
+          <span class="n">01</span>
+          <div>
+            <h3>Open the signup repository</h3>
+            <p><a href="https://github.com/SJComputerProgrammingClub/signup">github.com/SJComputerProgrammingClub/signup</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="n">02</span>
+          <div>
+            <h3>File an issue</h3>
+            <p>Filing the issue is how a member is added to the organization. The button above opens the signup page with the issue form.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="links" id="links">
+      <p class="label">Links</p>
+      <a href="https://github.com/SJComputerProgrammingClub">The organization</a>
+      <a href="https://github.com/SJComputerProgrammingClub/signup">The signup repository</a>
+    </section>
+  </div>
+</div>
+
+<footer class="band band--deep">
+  <div class="wrap">
+    <span class="mark">
+      <img src="https://bbk12e1-cdn.myschoolcdn.com/1550/site/1426/homescreen/sj%20logo%20150x150.png?w=192" alt="">
+      <span>Computer Programming Club</span>
+    </span>
+    <a href="https://github.com/SJComputerProgrammingClub">github.com/SJComputerProgrammingClub</a>
+    <a href="https://github.com/SJComputerProgrammingClub/signup/issues/new">Join by filing an issue</a>
+  </div>
+</footer>
+
+</body>
+</html>
